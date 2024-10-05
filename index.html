@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Adoption Zone</title>
+    <!-- Tailwind and daisy ui link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,700;1,14..32,700&family=Lato:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Customizing styles -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "btn-bg": "#0E7A81",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- CSS styles -->
+    <style>
+      .inter {
+        font-family: "Inter", sans-serif;
+      }
+
+      .lato {
+        font-family: "Lato", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="w-11/12 mx-auto min-h-screen">
+      <nav class="lato">
+        <div class="navbar space-between px-0">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              >
+                <li><a>Home</a></li>
+                <li><a>Shop</a></li>
+                <li><a>Contact</a></li>
+              </ul>
+            </div>
+            <div class="btn btn-ghost gap-2">
+              <img class="w-6 h-6" src="./images/logo.webp" alt="paddy-logo" />
+              <a class="text-xl md:text-3xl font-bold">Pets Zone</a>
+            </div>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+              <li><a>Home</a></li>
+              <li><a>Shop</a></li>
+              <li><a>Contact</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <img
+              class="w-6"
+              src="https://img.icons8.com/?size=96&id=T5URFachnKRD&format=png"
+              alt=""
+            />
+          </div>
+        </div>
+      </nav>
+      <!-- hero -->
+      <div class="py-10">
+        <div class="lato hero-content text-center">
+          <div class="max-w-md space-y-6">
+            <p>Bringing Families Together ❤️‍🔥</p>
+            <h1 class="text-3xl md:text-4xl font-bold">
+              Your Path to Adoption Starts Here
+            </h1>
+            <p>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a.
+            </p>
+            <button onclick="viewMore()" class="btn bg-btn-bg text-white">
+              View More
+            </button>
+            <img src="./images/pet.webp" alt="pets-image" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="w-11/12 mx-auto px-4">
+      <!-- Adopt  Your  Best Friend section -->
+      <section id="main-section" class="">
+        <div class="w-full md:w-2/4 mx-auto text-center">
+          <h1 class="text-3xl font-bold">Adopt Your Best Friend</h1>
+          <p class="py-4">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a.
+          </p>
+        </div>
+        <!-- buttons -->
+        <div class="inter my-16 flex justify-center gap-6 flex-wrap">
+          <button class="btn bg-white border-2 shadow-none btn-md lg:btn-lg">
+            <img
+              class="w-5 lg:w-10"
+              src="https://img.icons8.com/?size=96&id=120345&format=png"
+              alt="dogs"
+            />
+            Dogs
+          </button>
+          <button class="btn bg-white border-2 shadow-none btn-md lg:btn-lg">
+            <img
+              class="w-5 lg:w-10"
+              src="https://img.icons8.com/?size=96&id=120341&format=png"
+              alt="cats"
+            />
+            Cats
+          </button>
+          <button class="btn bg-white border-2 shadow-none btn-md lg:btn-lg">
+            <img
+              class="w-5 lg:w-10"
+              src="https://img.icons8.com/?size=96&id=120341&format=png"
+              alt="cats"
+            />
+            Rabbits
+          </button>
+          <button class="btn bg-white border-2 shadow-none btn-md lg:btn-lg">
+            <img
+              class="w-5 lg:w-10"
+              src="https://img.icons8.com/?size=96&id=x72GDjTmUEoS&format=png"
+              alt="birds"
+            />
+            Birds
+          </button>
+        </div>
+        <!-- Deals here -->
+        <div class="lato flex justify-between items-center">
+          <h1 class="text-xl font-extrabold">Best Deal For you</h1>
+          <button class="btn text-white bg-btn-bg">Sort by price</button>
+        </div>
+      </section>
+    </main>
+    <!-- scripts -->
+    <script src="./js/pets.js"></script>
+  </body>
+</html>
