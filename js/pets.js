@@ -15,7 +15,7 @@ const buttonDisplay = (card) => {
         const div = document.createElement('div');
         div.classList.add('inter');
         div.innerHTML = `
-        <button onclick="displayPetCard('${category}')" class="btn bg-white border-2 shadow-none btn-md lg:btn-lg">
+        <button onclick="categoryClickHandle('${category}')" class="btn bg-white border-2 shadow-none btn-md lg:btn-lg">
         <img
             class="w-5 md:w-7"
             src= ${category_icon}
@@ -29,13 +29,22 @@ const buttonDisplay = (card) => {
     })
 }
 
+const categoryClickHandle = (name) => {
+    document.getElementById('load-spinner').classList.remove('hidden');
+    document.querySelector('#all-pets-container').classList.add('hidden');
+    setTimeout(()=>{
+        // stop spinner after 2 sec
+        document.getElementById('load-spinner').classList.add('hidden');
+        displayPetCard(true, name);
+    }, 2000);
+}
 //show category on clicking name based buttons
-const displayPetCard = async(name) => {
+const displayPetCard = async(isLoad, name) => {
     // console.log(name)
     const url = `https://openapi.programming-hero.com/api/peddy/category/${name ? name : 'Not Available'}`
     const res = await fetch(url);
     const data = await res.json();
-    displayAllPets(data.data);
+    isLoad ? displayAllPets(data.data) : displayAllPets([]);
 }
 
 categoryBasedPetLoad();
@@ -54,6 +63,11 @@ const displayAllPets = (pets) => {
         document.getElementById('error-data').classList.remove('hidden');
         document.getElementById('error-data').classList.add('flex');
     }
+    else{
+        document.getElementById('error-data').classList.add('hidden');
+        document.getElementById('error-data').classList.remove('flex');
+    }
+    document.querySelector('#all-pets-container').classList.remove('hidden');
     const petsContainer = document.querySelector('#all-pets-container');
     petsContainer.innerHTML = "";
     pets.forEach(pet => {
