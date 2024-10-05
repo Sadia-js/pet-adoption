@@ -32,7 +32,7 @@ const buttonDisplay = (card) => {
 //show category on clicking name based buttons
 const displayPetCard = async(name) => {
     // console.log(name)
-    const url = `https://openapi.programming-hero.com/api/peddy/category/${name ? name : 'No data'}`
+    const url = `https://openapi.programming-hero.com/api/peddy/category/${name ? name : 'Not Available'}`
     const res = await fetch(url);
     const data = await res.json();
     displayAllPets(data.data);
@@ -58,7 +58,8 @@ const displayAllPets = (pets) => {
     petsContainer.innerHTML = "";
     pets.forEach(pet => {
         // console.log(pet)
-        const {image, pet_name, breed, date_of_birth, gender, price} = pet;
+        const {image, pet_name, breed, date_of_birth, gender, price, petId
+        } = pet;
         const div = document.createElement('div');
         div.classList = "card border-2"
         div.innerHTML = `
@@ -70,14 +71,14 @@ const displayAllPets = (pets) => {
               </figure>
               <div class="lato font-normal card-body py-4 px-4">
                 <h2 class="card-title inter">${pet_name || 'Not Available'}</h2>
-                <p><i class="fa-solid fa-shield-dog"></i> Bread: ${breed || 'Not Available'}</p>
-                <p><i class="fa-solid fa-cake-candles"></i> Birth: ${ date_of_birth || 'Not Available'}</p>
+                <p><i class="fa-solid fa-shield-dog text-sm"></i> Bread: ${breed || 'Not Available'}</p>
+                <p><i class="fa-solid fa-cake-candles text-sm"></i> Birth: ${ date_of_birth || 'Not Available'}</p>
                 <p><i class="fa-solid fa-mercury"></i> Gender: ${gender || 'Not Available'}</p>
                 <p><i class="fa-solid fa-dollar-sign"></i> Price: ${price || 'Not Available'}</p>
                 <div class="flex justify-between gap-4">
                   <button onclick="showImage('${image}')" class="btn btn-ghost btn-sm"><i class="fa-regular fa-thumbs-up"></i></button>
                   <button class="btn btn-ghost btn-sm text-btn-bg">Adopt</button>
-                  <button class="btn btn-ghost btn-sm text-btn-bg">Details</button>
+                  <button onclick="showDetails(${petId})" class="btn btn-ghost btn-sm text-btn-bg">Details</button>
                 </div>
               </div>
         `

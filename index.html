@@ -19,7 +19,10 @@
       rel="stylesheet"
     />
     <!-- font awesome -->
-    <script src="https://kit.fontawesome.com/f1872612b9.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/f1872612b9.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Customizing styles -->
     <script>
       tailwind.config = {
@@ -119,7 +122,7 @@
 
     <main class="w-11/12 mx-auto px-4">
       <!-- Adopt  Your  Best Friend section -->
-      <section id="main-section" class="">
+      <section id="main-section" class="my-16">
         <div class="w-full md:w-2/4 mx-auto text-center">
           <h1 class="text-3xl font-bold">Adopt Your Best Friend</h1>
           <p class="py-4">
@@ -129,9 +132,10 @@
           </p>
         </div>
         <!-- buttons -->
-        <div id="button-container" class="my-16 flex justify-center gap-6 flex-wrap">
-          
-        </div>
+        <div
+          id="button-container"
+          class="my-16 flex justify-center gap-6 flex-wrap"
+        ></div>
         <!-- Deals here -->
         <div class="lato flex justify-between items-center">
           <h1 class="text-xl font-extrabold">Best Deal For you</h1>
@@ -144,32 +148,89 @@
           <span class="loading loading-bars loading-md"></span>
         </div>
         <!-- all pets -->
-         <section class="pt-16 flex flex-col md:flex-row justify-between gap-6">
+        <section class="pt-16 flex flex-col md:flex-row justify-between gap-6">
           <!-- pet-card-left-side -->
-          <div id="all-pets-container" class="w-full md:w-2/4 lg:w-4/6 grid grid-cols-1 lg:grid-cols-3 gap-4">
-            
-          </div>
+          <div
+            id="all-pets-container"
+            class="w-full md:w-3/4 lg:w-4/6 grid grid-cols-1 lg:grid-cols-3 gap-4"
+          ></div>
           <!-- pet-card-right-side -->
-          <div class="w-full md:2/4 lg:w-2/6 gap-3">
-            <div id="pet-image-card" class="hidden grid-cols-2 gap-4 border-2 rounded-lg md:rounded-2xl p-4">
-              
-            </div>
+          <div class="w-full md:1/4 lg:w-2/6 gap-3">
+            <div
+              id="pet-image-card"
+              class="hidden grid-cols-2 gap-4 border-2 rounded-lg md:rounded-2xl p-4"
+            ></div>
           </div>
-         </section>
-         <!-- for no data -->
-         <section>
-          <div id="error-data" class="hidden py-10 bg-base-200 rounded-xl lato hero-content text-center">
+        </section>
+        <!-- for no data -->
+        <section>
+          <div
+            id="error-data"
+            class="hidden py-10 bg-base-200 rounded-xl lato hero-content text-center"
+          >
             <div class="max-w-md space-y-6">
-              <img class="w-24 mx-auto" src="./images/error.webp" alt="error">
-              <h1 class="inter text-3xl md:text-4xl font-bold">No Information Available</h1>
-              <p class="lato ">It is a long established fact that a reader will be distracted by the readable content of a page when looking at 
-                its layout. The point of using Lorem Ipsum is that it has a.</p>
+              <img class="w-24 mx-auto" src="./images/error.webp" alt="error" />
+              <h1 class="inter text-3xl md:text-4xl font-bold">
+                No Information Available
+              </h1>
+              <p class="lato">
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
+                The point of using Lorem Ipsum is that it has a.
+              </p>
             </div>
           </div>
-         </section>
+        </section>
+        <!-- modal -->
+        <div>
+          <!-- Open the modal using ID.showModal() method -->
+          <dialog id="my_modal_1" class="modal">
+           
+          </dialog>
+        </div>
       </section>
     </main>
+
+    <footer class="footer bg-black text-white p-10">
+      <nav>
+        <h6 class="inter text-lg flex gap-2 mb-3">
+          <img src="./images/logo.webp" alt="pet-logo">
+          Pet Zone
+        </h6>
+        <a class="link link-hover">Location: av. Washington 165, NY CA 54003
+        </a>
+        <a class="link link-hover">Phone: +31 85 964 47 25
+        </a>
+        <a class="link link-hover">Email: info@yourdomain.com
+        </a>
+        <a class="link link-hover">Openings hours: 9.00 AM - 5.00 PM</a>
+      </nav>
+      <nav>
+        <h6 class="inter text-lg">User Links</h6>
+        <a class="link link-hover">Home</a>
+        <a class="link link-hover">About us</a>
+        <a class="link link-hover">Animals</a>
+        <a class="link link-hover">Foundation</a>
+        <a class="link link-hover">Contact</a >
+      </nav>
+      <nav>
+        <h6 class="inter text-lg">Drop a Message</h6>
+        <fieldset class="form-control w-50">
+          <label class="label">
+            <span class="label-text">Enter your email address</span>
+          </label>
+          <div class="flex flex-col gap-4">    
+            <input
+              type="text"
+              placeholder="username@site.com"
+              class="input input-bordered text-black" />
+            <button class="btn text-md bg-btn-bg rounded-2xl text-white">Subscribe</button>
+          </div>
+        </fieldset>
+      </nav>
+    </footer>
     <!-- scripts -->
     <script src="./js/pets.js"></script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
