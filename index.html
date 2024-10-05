@@ -18,6 +18,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,700;1,14..32,700&family=Lato:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/f1872612b9.js" crossorigin="anonymous"></script>
     <!-- Customizing styles -->
     <script>
       tailwind.config = {
@@ -127,45 +129,44 @@
           </p>
         </div>
         <!-- buttons -->
-        <div class="inter my-16 flex justify-center gap-6 flex-wrap">
-          <button class="btn bg-white border-2 shadow-none btn-md lg:btn-lg">
-            <img
-              class="w-5 lg:w-10"
-              src="https://img.icons8.com/?size=96&id=120345&format=png"
-              alt="dogs"
-            />
-            Dogs
-          </button>
-          <button class="btn bg-white border-2 shadow-none btn-md lg:btn-lg">
-            <img
-              class="w-5 lg:w-10"
-              src="https://img.icons8.com/?size=96&id=120341&format=png"
-              alt="cats"
-            />
-            Cats
-          </button>
-          <button class="btn bg-white border-2 shadow-none btn-md lg:btn-lg">
-            <img
-              class="w-5 lg:w-10"
-              src="https://img.icons8.com/?size=96&id=120341&format=png"
-              alt="cats"
-            />
-            Rabbits
-          </button>
-          <button class="btn bg-white border-2 shadow-none btn-md lg:btn-lg">
-            <img
-              class="w-5 lg:w-10"
-              src="https://img.icons8.com/?size=96&id=x72GDjTmUEoS&format=png"
-              alt="birds"
-            />
-            Birds
-          </button>
+        <div id="button-container" class="my-16 flex justify-center gap-6 flex-wrap">
+          
         </div>
         <!-- Deals here -->
         <div class="lato flex justify-between items-center">
           <h1 class="text-xl font-extrabold">Best Deal For you</h1>
           <button class="btn text-white bg-btn-bg">Sort by price</button>
         </div>
+        <!-- load spinner -->
+        <div id="load-spinner" class="hidden text-center mt-16">
+          <span class="loading loading-bars loading-xs"></span>
+          <span class="loading loading-bars loading-sm"></span>
+          <span class="loading loading-bars loading-md"></span>
+        </div>
+        <!-- all pets -->
+         <section class="pt-16 flex flex-col md:flex-row justify-between gap-6">
+          <!-- pet-card-left-side -->
+          <div id="all-pets-container" class="w-full md:w-2/4 lg:w-4/6 grid grid-cols-1 lg:grid-cols-3 gap-4">
+            
+          </div>
+          <!-- pet-card-right-side -->
+          <div class="w-full md:2/4 lg:w-2/6 gap-3">
+            <div id="pet-image-card" class="hidden grid-cols-2 gap-4 border-2 rounded-lg md:rounded-2xl p-4">
+              
+            </div>
+          </div>
+         </section>
+         <!-- for no data -->
+         <section>
+          <div id="error-data" class="hidden py-10 bg-base-200 rounded-xl lato hero-content text-center">
+            <div class="max-w-md space-y-6">
+              <img class="w-24 mx-auto" src="./images/error.webp" alt="error">
+              <h1 class="inter text-3xl md:text-4xl font-bold">No Information Available</h1>
+              <p class="lato ">It is a long established fact that a reader will be distracted by the readable content of a page when looking at 
+                its layout. The point of using Lorem Ipsum is that it has a.</p>
+            </div>
+          </div>
+         </section>
       </section>
     </main>
     <!-- scripts -->
