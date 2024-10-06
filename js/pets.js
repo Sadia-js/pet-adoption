@@ -1,5 +1,6 @@
 
 // buttons fetch by categories api
+let active = null; 
 const categoryBasedPetLoad = () => {
     fetch('https://openapi.programming-hero.com/api/peddy/categories')
     .then(res => res.json())
@@ -15,7 +16,7 @@ const buttonDisplay = (card) => {
         const div = document.createElement('div');
         div.classList.add('inter');
         div.innerHTML = `
-        <button onclick="categoryClickHandle('${category}')" class="btn bg-white border-2 shadow-none btn-md lg:btn-lg">
+        <button id= "btn-${category}" onclick="categoryClickHandle('${category}')" class="btn border-2 shadow-none btn-md lg:btn-lg">
         <img
             class="w-5 md:w-7"
             src= ${category_icon}
@@ -30,6 +31,12 @@ const buttonDisplay = (card) => {
 }
 
 const categoryClickHandle = (name) => {
+    if(active){
+        active.style.cssText = "";
+    }
+    active = document.getElementById(`btn-${name}`);
+    active.style.cssText = "background-color : #CFFCFF";
+
     document.getElementById('load-spinner').classList.remove('hidden');
     document.querySelector('#all-pets-container').classList.add('hidden');
     setTimeout(()=>{

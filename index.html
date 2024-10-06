@@ -48,14 +48,13 @@
   </head>
   <body>
     <header class="w-11/12 mx-auto min-h-screen">
-      <nav class="lato">
-        <div class="navbar space-between px-0">
-          <div class="navbar-start">
-            <div class="dropdown">
+      <nav class="lato py-6">
+          <div class="flex justify-between items-center">
+            <div class="dropdown block lg:hidden">
               <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
+                  class="h-4 w-4"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -70,36 +69,33 @@
               </div>
               <ul
                 tabindex="0"
-                class="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                class="menu menu-xs dropdown-content rounded-box z-[1] w-44 p-1 shadow"
               >
                 <li><a>Home</a></li>
                 <li><a>Shop</a></li>
                 <li><a>Contact</a></li>
               </ul>
             </div>
-            <div class="btn btn-ghost gap-2">
-              <img class="w-6 h-6" src="./images/logo.webp" alt="paddy-logo" />
-              <a class="text-xl md:text-3xl font-bold">Pets Zone</a>
+            
+              <h6 class="inter text-md md:text-2xl flex items-center gap-2">
+                <img class="w-6" src="./images/logo.webp" alt="pet-logo">
+                Pet Zone
+              </h6>
+      
+              <div class="hidden lg:flex">
+                <ul class="flex justify-between gap-16 items-center font-bold px-1">
+                  <li><a>Home</a></li>
+                  <li><a>Shop</a></li>
+                  <li><a>Contact</a></li>
+                </ul>
+              </div>
+              <div>
+                <i class="fa-regular fa-user border-2 p-2 rounded-full"></i>
             </div>
           </div>
-          <div class="navbar-center hidden lg:flex">
-            <ul class="menu menu-horizontal px-1">
-              <li><a>Home</a></li>
-              <li><a>Shop</a></li>
-              <li><a>Contact</a></li>
-            </ul>
-          </div>
-          <div class="navbar-end">
-            <img
-              class="w-6"
-              src="https://img.icons8.com/?size=96&id=T5URFachnKRD&format=png"
-              alt=""
-            />
-          </div>
-        </div>
       </nav>
       <!-- hero -->
-      <div class="py-10">
+      <div class="pb-10 pt-10">
         <div class="lato hero-content text-center">
           <div class="max-w-md space-y-6">
             <p>Bringing Families Together ❤️‍🔥</p>
