@@ -4,28 +4,28 @@
 
 ## Used By
 
-#### The following features are used for this project : 
+#### The following features are available for this project : 
 
-### E6 Features
-#### 5 features of ES6 has been used
+### Features
+### 1) 5 features of ES6 has been used :
 - Arrow Functions
 - Template Literals
 - Destructuring 
 - forEach
 - Promises
 
-#### 5 key features are
-- Responsive
+### 2) 5 key features are
+- All categories maintained by given API
 - Asynchronous handling
 - Dynamic UI 
 - Sorting Functionality for Sort by Price button
 - Error Handling
 
 
+
 ## Deployment
 
 To deploy this project run
-
 ```bash
 pet-adoption-sn.surge.sh
 ```
