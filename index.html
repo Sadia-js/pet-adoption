@@ -188,18 +188,22 @@
         <div>
           <dialog id="congratulate" class="modal">
             <div class="modal-box">
-              <div class=" flex flex-col items-center">
-                <h3 class="text-3xl font-bold flex items-center gap-2">Congrates
+              <div class=" flex flex-col items-center justify-between gap-2">
+                <img class="w-10 mx-auto" src="https://img.icons8.com/?size=96&id=80676&format=png" alt="">
+                <h3 class="text-2xl font-bold flex items-center gap-2 justify-center">Congrates
                   <img class="w-10" src="https://img.icons8.com/?size=96&id=33824&format=png" alt="">
                 </h3>
-                <p class="py-4 text-black text-lg">Adoption process has started for your pet.</p>
+                <p class="text-center text-black text-lg">Adoption process has started for your pet.</p>
+                <p id="counter" class="text-4xl font-bold"></p>
+           
               </div>
-              <div class="modal-action">
-                <form method="dialog" class="w-2/4 mx-auto">
-                  <!-- if there is a button in form, it will close the modal -->
-                  <button class="btn w-full bg-red-500 text-white">Close</button>
+              <!-- <div class="modal-action">
+                <form method="dialog" class="mx-auto">
+                  <span class="font-mono text-6xl">
+                    <span id="counter"></span>
+                 </span>
                 </form>
-              </div>
+              </div> -->
             </div>
           </dialog>
         </div>

@@ -30,12 +30,16 @@ const buttonDisplay = (card) => {
 
 let active = null; 
 const categoryClickHandle = (name) => {
+    document.getElementById('error-data').classList.add('hidden');
     if(active){
         active.style.cssText = "";
     }
     active = document.getElementById(`btn-${name}`);
     active.style.cssText = "background-color : #CFFCFF";
+    loadSpinner(name);
+}
 
+const loadSpinner = (name) => {
     document.getElementById('load-spinner').classList.remove('hidden');
     document.querySelector('#all-pets-container').classList.add('hidden');
     setTimeout(()=>{
@@ -48,8 +52,8 @@ const categoryClickHandle = (name) => {
 // while triggered sort
 let currentPrice = []; 
 const sortingPrice = () => {
-        currentPrice.sort((a, b) => (b.price - a.price))
-        displayAllPets(currentPrice);
+    currentPrice.sort((a, b) => (b.price - a.price))
+    displayAllPets(currentPrice);
 } 
 
 //show category on clicking name based buttons
@@ -79,14 +83,10 @@ const allPets = (statement) => {
 
 const displayAllPets = (pets) => {
     // console.log(pets)
-    if(pets.length === 0){
-        document.getElementById('error-data').classList.remove('hidden');
-        document.getElementById('error-data').classList.add('flex');
-    }
-    else{
-        document.getElementById('error-data').classList.add('hidden');
-        document.getElementById('error-data').classList.remove('flex');
-    }
+    const error = document.getElementById('error-data');
+    pets.length > 0 ? error.classList.add('hidden') && error.classList.remove('flex') : 
+    error.classList.remove('hidden') && error.classList.add('flex');
+
     document.querySelector('#all-pets-container').classList.remove('hidden');
     const petsContainer = document.querySelector('#all-pets-container');
     petsContainer.innerHTML = "";
@@ -111,9 +111,9 @@ const displayAllPets = (pets) => {
                 <p><i class="fa-solid fa-dollar-sign"></i> Price: ${price || 'Not Available'}</p>
                 <div class="divider mt-0 mb-1"></div>
                 <div class="flex justify-between gap-4">
-                  <button onclick="showImage('${image}')" class="btn hover:text-white hover:bg-btn-bg btn-sm"><i class="fa-regular fa-thumbs-up"></i></button>
-                  <button onclick="greetingsBtn()" class="btn hover:bg-btn-bg btn-sm hover:text-white text-btn-bg">Adopt</button>
-                  <button onclick="showDetails(${petId})" class="btn hover:bg-btn-bg hover:text-white btn-sm text-btn-bg">Details</button>
+                  <button onclick="showImage('${image}')" class="btn hover:text-white hover:bg-btn-bg btn-xs"><i class="fa-regular fa-thumbs-up"></i></button>
+                  <button id="btn-${petId}" onclick="greetingsBtn(${petId})" class="btn hover:bg-btn-bg btn-xs hover:text-white text-btn-bg">Adopt</button>
+                  <button onclick="showDetails(${petId})" class="btn hover:bg-btn-bg hover:text-white btn-xs text-btn-bg">Details</button>
                 </div>
               </div>
         `
@@ -123,8 +123,25 @@ const displayAllPets = (pets) => {
 }
 
 // greetingsBtn
-const greetingsBtn = () => {
+const greetingsBtn = (id) => {
+    console.log(id)
     congratulate.showModal();
+    let counter = 3;
+    let button = document.getElementById(`btn-${id}`);
+    let timeCount = document.getElementById('counter');
+    timeCount.innerText = counter;
+    console.log(counter)
+
+   const remainingTime = setInterval(() => {
+        counter --;
+        timeCount.innerText = counter;
+        if(counter <= 0){
+            clearInterval(remainingTime);
+            timeCount.innerText = "";
+            congratulate.close();
+            button.disabled = true;
+        }
+    }, 1000);
 }
 
 // open the right part clicking thumbs-up button
