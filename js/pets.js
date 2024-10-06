@@ -38,22 +38,36 @@ const categoryClickHandle = (name) => {
         displayPetCard(true, name);
     }, 2000);
 }
+
+// while triggered sort
+let currentPrice = []; 
+const sortingPrice = () => {
+        currentPrice.sort((a, b) => (b.price - a.price))
+        displayAllPets(currentPrice);
+} 
+
 //show category on clicking name based buttons
 const displayPetCard = async(isLoad, name) => {
     // console.log(name)
     const url = `https://openapi.programming-hero.com/api/peddy/category/${name ? name : 'Not Available'}`
     const res = await fetch(url);
     const data = await res.json();
-    isLoad ? displayAllPets(data.data) : displayAllPets([]);
+    currentPrice = isLoad ? data.data : [];
+    displayAllPets(currentPrice);
 }
 
 categoryBasedPetLoad();
 
 // fetching all pets data
-const allPets = () => {
+const allPets = (statement) => {
     fetch('https://openapi.programming-hero.com/api/peddy/pets')
     .then(res => res.json())
-    .then(data => displayAllPets(data.pets))
+    .then(data =>  {
+       if(statement === false){
+       currentPrice = data.pets;
+       displayAllPets(currentPrice);
+       }
+    })
     .catch(err => console.log(err))
 }
 
@@ -71,7 +85,7 @@ const displayAllPets = (pets) => {
     const petsContainer = document.querySelector('#all-pets-container');
     petsContainer.innerHTML = "";
     pets.forEach(pet => {
-        // console.log(pet)
+        // console.log(pet);
         const {image, pet_name, breed, date_of_birth, gender, price, petId
         } = pet;
         const div = document.createElement('div');
@@ -98,6 +112,7 @@ const displayAllPets = (pets) => {
         `
         petsContainer.append(div);
     });
+
 }
 
 // open the right part clicking thumbs-up button
@@ -115,4 +130,4 @@ const showImage = (image) => {
     console.log(image)
 }
 
-allPets();
+allPets(false);
