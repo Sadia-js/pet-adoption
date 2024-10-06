@@ -49,50 +49,50 @@
   <body>
     <header class="w-11/12 mx-auto min-h-screen">
       <nav class="lato py-6">
-          <div class="flex justify-between items-center">
-            <div class="dropdown block lg:hidden">
-              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />
-                </svg>
-              </div>
-              <ul
-                tabindex="0"
-                class="menu menu-xs dropdown-content rounded-box z-[1] w-44 p-1 shadow"
+        <div class="flex justify-between items-center">
+          <div class="dropdown block lg:hidden">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                <li><a>Home</a></li>
-                <li><a>Shop</a></li>
-                <li><a>Contact</a></li>
-              </ul>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
             </div>
-            
-              <h6 class="inter text-md md:text-2xl flex items-center gap-2">
-                <img class="w-6" src="./images/logo.webp" alt="pet-logo">
-                Pet Zone
-              </h6>
-      
-              <div class="hidden lg:flex">
-                <ul class="flex justify-between gap-16 items-center font-bold px-1">
-                  <li><a>Home</a></li>
-                  <li><a>Shop</a></li>
-                  <li><a>Contact</a></li>
-                </ul>
-              </div>
-              <div>
-                <i class="fa-regular fa-user border-2 p-2 rounded-full"></i>
-            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-xs dropdown-content rounded-box z-[1] w-44 p-1 shadow"
+            >
+              <li><a>Home</a></li>
+              <li><a>Shop</a></li>
+              <li><a>Contact</a></li>
+            </ul>
           </div>
+
+          <h6 class="inter text-md md:text-2xl flex items-center gap-2">
+            <img class="w-6" src="./images/logo.webp" alt="pet-logo" />
+            Pet Zone
+          </h6>
+
+          <div class="hidden lg:flex">
+            <ul class="flex justify-between gap-16 items-center font-bold px-1">
+              <li><a>Home</a></li>
+              <li><a>Shop</a></li>
+              <li><a>Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <i class="fa-regular fa-user border-2 p-2 rounded-full"></i>
+          </div>
+        </div>
       </nav>
       <!-- hero -->
       <div class="pb-10 pt-10">
@@ -103,11 +103,9 @@
               Your Path to Adoption Starts Here
             </h1>
             <p>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a.
+              Your path to adoption begins with compassion and commitment, guiding you to a loving companion in need. Discover the joy of welcoming a furry friend into your home and heart, transforming lives together.
             </p>
-            <button onclick="viewMore()" class="btn bg-btn-bg text-white">
+            <button class="btn bg-btn-bg text-white">
               View More
             </button>
             <img src="./images/pet.webp" alt="pets-image" />
@@ -119,12 +117,10 @@
     <main class="w-11/12 mx-auto px-4">
       <!-- Adopt  Your  Best Friend section -->
       <section id="main-section" class="my-16">
-        <div class="w-full md:w-2/4 mx-auto text-center">
+        <div class="w-full md:w-3/4 mx-auto text-center">
           <h1 class="text-3xl font-bold">Adopt Your Best Friend</h1>
           <p class="py-4">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a.
+            Adopting a pet is a transformative experience that gives a loving animal a second chance at life. Shelters are filled with wonderful pets of all breeds and ages, each ready to become a cherished companion. By choosing adoption, you not only find a loyal friend but also contribute to reducing homelessness among animals.
           </p>
         </div>
         <!-- buttons -->
@@ -133,9 +129,14 @@
           class="my-16 flex justify-center gap-6 flex-wrap"
         ></div>
         <!-- Deals here -->
-        <div id="sort-price-container" class="lato flex justify-between items-center">
+        <div
+          id="sort-price-container"
+          class="lato flex justify-between items-center"
+        >
           <h1 class="text-xl font-extrabold">Best Deal For you</h1>
-          <button onclick="sortingPrice()" class="btn text-white bg-btn-bg">Sort by price</button>
+          <button onclick="sortingPrice()" class="btn text-white bg-btn-bg">
+            Sort by price
+          </button>
         </div>
         <!-- load spinner -->
         <div id="load-spinner" class="hidden text-center mt-16">
@@ -177,11 +178,29 @@
             </div>
           </div>
         </section>
-        <!-- modal -->
+        <!-- modal for details -->
         <div>
           <!-- Open the modal using ID.showModal() method -->
-          <dialog id="my_modal_1" class="modal">
-           
+          <dialog id="my_modal_1" class="modal"></dialog>
+        </div>
+
+        <!-- modal for congratulates -->
+        <div>
+          <dialog id="congratulate" class="modal">
+            <div class="modal-box">
+              <div class=" flex flex-col items-center">
+                <h3 class="text-3xl font-bold flex items-center gap-2">Congrates
+                  <img class="w-10" src="https://img.icons8.com/?size=96&id=33824&format=png" alt="">
+                </h3>
+                <p class="py-4 text-black text-lg">Adoption process has started for your pet.</p>
+              </div>
+              <div class="modal-action">
+                <form method="dialog" class="w-2/4 mx-auto">
+                  <!-- if there is a button in form, it will close the modal -->
+                  <button class="btn w-full bg-red-500 text-white">Close</button>
+                </form>
+              </div>
+            </div>
           </dialog>
         </div>
       </section>
@@ -190,15 +209,14 @@
     <footer class="footer bg-black text-white p-10">
       <nav>
         <h6 class="inter text-lg flex gap-2 mb-3">
-          <img src="./images/logo.webp" alt="pet-logo">
+          <img src="./images/logo.webp" alt="pet-logo" />
           Pet Zone
         </h6>
-        <a class="link link-hover">Location: av. Washington 165, NY CA 54003
+        <a class="link link-hover"
+          >Location: av. Washington 165, NY CA 54003
         </a>
-        <a class="link link-hover">Phone: +31 85 964 47 25
-        </a>
-        <a class="link link-hover">Email: info@yourdomain.com
-        </a>
+        <a class="link link-hover">Phone: +31 85 964 47 25 </a>
+        <a class="link link-hover">Email: info@yourdomain.com </a>
         <a class="link link-hover">Openings hours: 9.00 AM - 5.00 PM</a>
       </nav>
       <nav>
@@ -207,7 +225,7 @@
         <a class="link link-hover">About us</a>
         <a class="link link-hover">Animals</a>
         <a class="link link-hover">Foundation</a>
-        <a class="link link-hover">Contact</a >
+        <a class="link link-hover">Contact</a>
       </nav>
       <nav>
         <h6 class="inter text-lg">Drop a Message</h6>
@@ -215,12 +233,15 @@
           <label class="label">
             <span class="label-text">Enter your email address</span>
           </label>
-          <div class="flex flex-col gap-4">    
+          <div class="flex flex-col gap-4">
             <input
               type="text"
               placeholder="username@site.com"
-              class="input input-bordered text-black" />
-            <button class="btn text-md bg-btn-bg rounded-2xl text-white">Subscribe</button>
+              class="input input-bordered text-black"
+            />
+            <button class="btn text-md bg-btn-bg rounded-2xl text-white">
+              Subscribe
+            </button>
           </div>
         </fieldset>
       </nav>

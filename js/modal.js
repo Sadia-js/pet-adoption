@@ -30,7 +30,7 @@ const displayModal = (petId) => {
               <p>${pet_details}</p>
               <div class="modal-action">
                 <form method="dialog" class="w-full">
-                  <button class="btn w-full bg-red-400">Cancel</button>
+                  <button class="btn w-full bg-red-500 text-white">Cancel</button>
                 </form>
               </div>
             </div>

@@ -1,6 +1,4 @@
-
 // buttons fetch by categories api
-let active = null; 
 const categoryBasedPetLoad = () => {
     fetch('https://openapi.programming-hero.com/api/peddy/categories')
     .then(res => res.json())
@@ -30,6 +28,7 @@ const buttonDisplay = (card) => {
     })
 }
 
+let active = null; 
 const categoryClickHandle = (name) => {
     if(active){
         active.style.cssText = "";
@@ -110,16 +109,22 @@ const displayAllPets = (pets) => {
                 <p><i class="fa-solid fa-cake-candles text-sm"></i> Birth: ${ date_of_birth || 'Not Available'}</p>
                 <p><i class="fa-solid fa-mercury"></i> Gender: ${gender || 'Not Available'}</p>
                 <p><i class="fa-solid fa-dollar-sign"></i> Price: ${price || 'Not Available'}</p>
+                <div class="divider mt-0 mb-1"></div>
                 <div class="flex justify-between gap-4">
-                  <button onclick="showImage('${image}')" class="btn btn-ghost btn-sm"><i class="fa-regular fa-thumbs-up"></i></button>
-                  <button class="btn btn-ghost btn-sm text-btn-bg">Adopt</button>
-                  <button onclick="showDetails(${petId})" class="btn btn-ghost btn-sm text-btn-bg">Details</button>
+                  <button onclick="showImage('${image}')" class="btn hover:text-white hover:bg-btn-bg btn-sm"><i class="fa-regular fa-thumbs-up"></i></button>
+                  <button onclick="greetingsBtn()" class="btn hover:bg-btn-bg btn-sm hover:text-white text-btn-bg">Adopt</button>
+                  <button onclick="showDetails(${petId})" class="btn hover:bg-btn-bg hover:text-white btn-sm text-btn-bg">Details</button>
                 </div>
               </div>
         `
         petsContainer.append(div);
     });
 
+}
+
+// greetingsBtn
+const greetingsBtn = () => {
+    congratulate.showModal();
 }
 
 // open the right part clicking thumbs-up button
