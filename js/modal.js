@@ -35,5 +35,5 @@ const displayModal = (petId) => {
               </div>
             </div>
     `
-    console.log(petId);
+    // console.log(petId);
 }

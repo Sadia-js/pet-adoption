@@ -77,7 +77,7 @@
             </ul>
           </div>
 
-          <h6 class="inter text-md md:text-2xl flex items-center gap-2">
+          <h6 class="font-extrabold text-lg md:text-2xl flex items-center gap-2">
             <img class="w-6" src="./images/logo.webp" alt="pet-logo" />
             Pet Zone
           </h6>
@@ -96,18 +96,20 @@
       </nav>
       <!-- hero -->
       <div class="pb-10 pt-10">
-        <div class="lato hero-content text-center">
-          <div class="max-w-md space-y-6">
+        <div class="lato text-center">
+          <div class="max-w-xl mx-auto space-y-6">
             <p>Bringing Families Together ❤️‍🔥</p>
-            <h1 class="text-3xl md:text-4xl font-bold">
+            <h1 class="max-w-md mx-auto text-3xl md:text-4xl font-extrabold">
               Your Path to Adoption Starts Here
             </h1>
             <p>
               Your path to adoption begins with compassion and commitment, guiding you to a loving companion in need. Discover the joy of welcoming a furry friend into your home and heart, transforming lives together.
             </p>
-            <button class="btn bg-btn-bg text-white">
-              View More
-            </button>
+            <a href="#main-section">
+              <button class="btn bg-btn-bg mt-8 text-white">
+                View More
+              </button>
+            </a>          
             <img src="./images/pet.webp" alt="pets-image" />
           </div>
         </div>
@@ -116,8 +118,8 @@
 
     <main class="w-11/12 mx-auto px-4">
       <!-- Adopt  Your  Best Friend section -->
-      <section id="main-section" class="my-16">
-        <div class="w-full md:w-3/4 mx-auto text-center">
+      <section id="main-section" class="mt-10">
+        <div class="lato w-full md:w-3/4 mx-auto text-center">
           <h1 class="text-3xl font-bold">Adopt Your Best Friend</h1>
           <p class="py-4">
             Adopting a pet is a transformative experience that gives a loving animal a second chance at life. Shelters are filled with wonderful pets of all breeds and ages, each ready to become a cherished companion. By choosing adoption, you not only find a loyal friend but also contribute to reducing homelessness among animals.
@@ -126,15 +128,15 @@
         <!-- buttons -->
         <div
           id="button-container"
-          class="my-16 flex justify-center gap-6 flex-wrap"
+          class="my-16 flex justify-between gap-6 flex-wrap"
         ></div>
         <!-- Deals here -->
         <div
           id="sort-price-container"
-          class="lato flex justify-between items-center"
+          class="lato flex gap-6 justify-between items-center"
         >
-          <h1 class="text-xl font-extrabold">Best Deal For you</h1>
-          <button onclick="sortingPrice()" class="btn text-white bg-btn-bg">
+          <h1 class="text-lg md:text-xl font-extrabold">Best Deal For you</h1>
+          <button onclick="sortingPrice()" class="btn btn-md text-white bg-btn-bg">
             Sort by price
           </button>
         </div>
@@ -145,37 +147,35 @@
           <span class="loading loading-bars loading-md"></span>
         </div>
         <!-- all pets -->
-        <section class="pt-16 flex flex-col md:flex-row justify-between gap-6">
+        <section id="deals-section" class="pt-16 flex flex-col md:flex-row justify-between gap-6">
           <!-- pet-card-left-side -->
           <div
             id="all-pets-container"
             class="w-full md:w-3/4 lg:w-4/6 grid grid-cols-1 lg:grid-cols-3 gap-4"
           ></div>
           <!-- pet-card-right-side -->
-          <div class="w-full md:1/4 lg:w-2/6 gap-3">
-            <div
-              id="pet-image-card"
+          <div class="w-full md:1/4 lg:w-2/6 gap-3 ml-auto">
+            <div id="pet-image-card"
               class="hidden grid-cols-2 gap-4 border-2 rounded-lg md:rounded-2xl p-4"
             ></div>
           </div>
         </section>
         <!-- for no data -->
-        <section>
+        <section id="error-data" class="hidden w-fit border-2 rounded-xl mx-auto p-4">
           <div
-            id="error-data"
-            class="hidden py-10 bg-base-200 rounded-xl lato hero-content text-center"
+            class="px-4 py-7 lg:p-10 max-w-xl mx-auto bg-base-200 rounded-xl lato text-center"
           >
-            <div class="max-w-md space-y-6">
-              <img class="w-24 mx-auto" src="./images/error.webp" alt="error" />
-              <h1 class="inter text-3xl md:text-4xl font-bold">
-                No Information Available
-              </h1>
-              <p class="lato">
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout.
-                The point of using Lorem Ipsum is that it has a.
-              </p>
-            </div>
+              <div class="max-w-md space-y-6">
+                <img class="w-16 md:w-24 mx-auto" src="./images/error.webp" alt="error" />
+                <h1 class="inter text-xl md:text-2xl lg:text-4xl font-bold">
+                  No Information Available
+                </h1>
+                <p class="lato">
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                  The point of using Lorem Ipsum is that it has a.
+                </p>
+              </div>
           </div>
         </section>
         <!-- modal for details -->
@@ -195,47 +195,39 @@
                 </h3>
                 <p class="text-center text-black text-lg">Adoption process has started for your pet.</p>
                 <p id="counter" class="text-4xl font-bold"></p>
-           
               </div>
-              <!-- <div class="modal-action">
-                <form method="dialog" class="mx-auto">
-                  <span class="font-mono text-6xl">
-                    <span id="counter"></span>
-                 </span>
-                </form>
-              </div> -->
             </div>
           </dialog>
         </div>
       </section>
     </main>
 
-    <footer class="footer bg-black text-white p-10">
+    <footer class="footer bg-black text-white p-10 mt-24">
       <nav>
-        <h6 class="inter text-lg flex gap-2 mb-3">
+        <h6 class="lato text-lg md:text-2xl font-extrabold flex gap-2 mb-3">
           <img src="./images/logo.webp" alt="pet-logo" />
           Pet Zone
         </h6>
-        <a class="link link-hover"
+        <a class="lato link link-hover"
           >Location: av. Washington 165, NY CA 54003
         </a>
-        <a class="link link-hover">Phone: +31 85 964 47 25 </a>
-        <a class="link link-hover">Email: info@yourdomain.com </a>
-        <a class="link link-hover">Openings hours: 9.00 AM - 5.00 PM</a>
+        <a class="link link-hover lato">Phone: +31 85 964 47 25 </a>
+        <a class="link link-hover lato">Email: info@yourdomain.com </a>
+        <a class="link link-hover lato">Openings hours: 9.00 AM - 5.00 PM</a>
       </nav>
       <nav>
-        <h6 class="inter text-lg">User Links</h6>
-        <a class="link link-hover">Home</a>
-        <a class="link link-hover">About us</a>
-        <a class="link link-hover">Animals</a>
-        <a class="link link-hover">Foundation</a>
-        <a class="link link-hover">Contact</a>
+        <h6 class="inter text-lg lato">User Links</h6>
+        <a class="link link-hover lato">Home</a>
+        <a class="link link-hover lato">About us</a>
+        <a class="link link-hover lato">Animals</a>
+        <a class="link link-hover lato">Foundation</a>
+        <a class="link link-hover lato">Contact</a>
       </nav>
       <nav>
         <h6 class="inter text-lg">Drop a Message</h6>
         <fieldset class="form-control w-50">
           <label class="label">
-            <span class="label-text">Enter your email address</span>
+            <span class="label-text lato">Enter your email address</span>
           </label>
           <div class="flex flex-col gap-4">
             <input

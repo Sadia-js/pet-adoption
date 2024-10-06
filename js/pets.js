@@ -12,9 +12,8 @@ const buttonDisplay = (card) => {
         const{category, category_icon} = btn;
         // console.log(btn.category)
         const div = document.createElement('div');
-        div.classList.add('inter');
         div.innerHTML = `
-        <button id= "btn-${category}" onclick="categoryClickHandle('${category}')" class="btn border-2 shadow-none btn-md lg:btn-lg">
+        <button id= "btn-${category}" onclick="categoryClickHandle('${category}')" class="text-xl inter btn border-2 shadow-none btn-md lg:btn-lg">
         <img
             class="w-5 md:w-7"
             src= ${category_icon}
@@ -31,6 +30,7 @@ const buttonDisplay = (card) => {
 let active = null; 
 const categoryClickHandle = (name) => {
     document.getElementById('error-data').classList.add('hidden');
+    document.getElementById('deals-section').classList.add('hidden');
     if(active){
         active.style.cssText = "";
     }
@@ -45,6 +45,7 @@ const loadSpinner = (name) => {
     setTimeout(()=>{
         // stop spinner after 2 sec
         document.getElementById('load-spinner').classList.add('hidden');
+        document.getElementById('deals-section').classList.remove('hidden');
         displayPetCard(true, name);
     }, 2000);
 }
@@ -124,7 +125,7 @@ const displayAllPets = (pets) => {
 
 // greetingsBtn
 const greetingsBtn = (id) => {
-    console.log(id)
+    // console.log(id)
     congratulate.showModal();
     let counter = 3;
     let button = document.getElementById(`btn-${id}`);
@@ -153,7 +154,7 @@ const showImage = (image) => {
     div.classList = "border-2 p-2 rounded-lg md:rounded-xl";
     div.innerHTML = 
     `
-        <img src= ${image} alt="pet-img" class="rounded-xl" />
+     <img src= ${image} alt="pet-img" class="rounded-xl" />
     `
     petImageCard.append(div);
     console.log(image)
