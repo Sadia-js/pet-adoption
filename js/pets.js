@@ -34,7 +34,7 @@ const categoryClickHandle = (name) => {
         active.style.cssText = "";
     }
     active = document.getElementById(`btn-${name}`);
-    active.style.cssText = "background-color : #CFFCFF";
+    active.style.cssText = "background-color : #CFFCFF; border-radius: 30px";
     loadSpinner(name);
 }
 
