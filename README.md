@@ -25,5 +25,5 @@
 To deploy this project run
 
 ```bash
-[Live-link] (https://pet-adoption-sn.surge.sh/)
+https://pet-adoption-sn.surge.sh/
 ```
