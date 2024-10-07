@@ -112,7 +112,7 @@ const displayAllPets = (pets) => {
               <div class="lato font-normal card-body py-4 px-4">
                 <h2 class="card-title inter">${pet_name || 'Not Available'}</h2>
                 <p><i class="fa-solid fa-shield-dog text-sm"></i> Bread: ${breed || 'Not Available'}</p>
-                <p><i class="fa-solid fa-cake-candles text-sm"></i> Birth: ${ date_of_birth || 'Not Available'}</p>
+                <p><i class="fa-solid fa-calendar-days text-xs"></i> Birth: ${new Date(date_of_birth).getFullYear() || 'Not Available'}</p>
                 <p><i class="fa-solid fa-mercury"></i> Gender: ${gender || 'Not Available'}</p>
                 <p><i class="fa-solid fa-dollar-sign"></i> Price: ${price || 'Not Available'}</p>
                 <div class="divider mt-0 mb-1"></div>

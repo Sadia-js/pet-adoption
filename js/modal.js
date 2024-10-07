@@ -22,7 +22,7 @@ const displayModal = (petId) => {
                   <p><i class="fa-solid fa-certificate text-xs"></i> Vaccinated-Status: ${vaccinated_status || 'Not Available'}</p>
                 </div>
                 <div>
-                  <p><i class="fa-solid fa-cake-candles text-sm"></i> Birth: ${ date_of_birth || 'Not Available'}</p>
+                  <p><i class="fa-solid fa-calendar-days text-xs"></i> Birth: ${new Date(date_of_birth).getFullYear() || 'Not Available'}</p>
                   <p><i class="fa-solid fa-dollar-sign"></i> Price: ${price || 'Not Available'}</p>
                 </div>
               </div>
