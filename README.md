@@ -17,7 +17,7 @@
 - Like button stands for how many pets you selected.
 - Dynamic UI 
 - Sort by Price button used to show price from descending to ascending.
-- Adopt button will confirm your process 
+- Adopt button will verify your confirmation process 
 
 
 ## Deployment
