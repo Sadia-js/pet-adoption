@@ -4,7 +4,7 @@
 
 ## Used By-
 #### The following features are used for this project : 
-### E6 Features
+### Features
 #### 1) 5 features of ES6 has been used
 - Arrow Functions
 - Template Literals
