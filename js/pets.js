@@ -30,7 +30,6 @@ const buttonDisplay = (card) => {
 let active = null; 
 const categoryClickHandle = (name) => {
     document.getElementById('error-data').classList.add('hidden');
-    document.getElementById('deals-section').classList.add('hidden');
     if(active){
         active.style.cssText = "";
     }
@@ -41,11 +40,10 @@ const categoryClickHandle = (name) => {
 
 const loadSpinner = (name) => {
     document.getElementById('load-spinner').classList.remove('hidden');
-    document.querySelector('#all-pets-container').classList.add('hidden');
+    document.querySelector('#deals-section').classList.add('hidden');
     setTimeout(()=>{
         // stop spinner after 2 sec
         document.getElementById('load-spinner').classList.add('hidden');
-        document.getElementById('deals-section').classList.remove('hidden');
         displayPetCard(true, name);
     }, 2000);
 }
@@ -83,12 +81,19 @@ const allPets = (statement) => {
 }
 
 const displayAllPets = (pets) => {
+    document.querySelector('#deals-section').classList.remove('hidden');
     // console.log(pets)
     const error = document.getElementById('error-data');
-    pets.length > 0 ? error.classList.add('hidden') && error.classList.remove('flex') : 
-    error.classList.remove('hidden') && error.classList.add('flex');
-
-    document.querySelector('#all-pets-container').classList.remove('hidden');
+    if(pets.length > 0 ){
+        error.classList.add('hidden');
+        error.classList.remove('flex');
+        document.querySelector('#all-pets-container').classList.remove('hidden');
+    }
+    else{
+        error.classList.remove('hidden');
+        error.classList.add('flex');
+        document.querySelector('#all-pets-container').classList.add('hidden');
+    }
     const petsContainer = document.querySelector('#all-pets-container');
     petsContainer.innerHTML = "";
     pets.forEach(pet => {
@@ -131,7 +136,7 @@ const greetingsBtn = (id) => {
     let button = document.getElementById(`btn-${id}`);
     let timeCount = document.getElementById('counter');
     timeCount.innerText = counter;
-    console.log(counter)
+    // console.log(counter);
 
    const remainingTime = setInterval(() => {
         counter --;
@@ -148,16 +153,11 @@ const greetingsBtn = (id) => {
 // open the right part clicking thumbs-up button
 const showImage = (image) => {
     const petImageCard = document.querySelector('#pet-image-card');
-    petImageCard.classList.add('grid');
-    petImageCard.classList.remove('hidden');
-    const div = document.createElement('div');
-    div.classList = "border-2 p-2 rounded-lg md:rounded-xl";
-    div.innerHTML = 
+    petImageCard.innerHTML += 
     `
-     <img src= ${image} alt="pet-img" class="rounded-xl" />
+     <img src= ${image} alt="pet-img" class="rounded-xl border-2 p-2" />
     `
-    petImageCard.append(div);
-    console.log(image)
+    // console.log(image)
 }
 
 allPets(false);

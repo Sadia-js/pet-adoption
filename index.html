@@ -95,7 +95,7 @@
         </div>
       </nav>
       <!-- hero -->
-      <div class="pb-10 pt-10">
+      <div class="pb-10 pt-[52px] mt-4">
         <div class="lato text-center">
           <div class="max-w-xl mx-auto space-y-6">
             <p>Bringing Families Together ❤️‍🔥</p>
@@ -151,33 +151,36 @@
           <!-- pet-card-left-side -->
           <div
             id="all-pets-container"
-            class="w-full md:w-3/4 lg:w-4/6 grid grid-cols-1 lg:grid-cols-3 gap-4"
+            class="border-2 p-3 w-full rounded-xl md:w-3/4 lg:w-4/6 grid grid-cols-1 lg:grid-cols-3 gap-4"
           ></div>
-          <!-- pet-card-right-side -->
-          <div class="w-full md:1/4 lg:w-2/6 gap-3 ml-auto">
-            <div id="pet-image-card"
-              class="hidden grid-cols-2 gap-4 border-2 rounded-lg md:rounded-2xl p-4"
-            ></div>
-          </div>
-        </section>
-        <!-- for no data -->
-        <section id="error-data" class="hidden w-fit border-2 rounded-xl mx-auto p-4">
+            <!-- for no data -->
+          <div id="error-data" class="hidden w-fit border-2 rounded-xl p-2 lg:p-4">
           <div
-            class="px-4 py-7 lg:p-10 max-w-xl mx-auto bg-base-200 rounded-xl lato text-center"
+            class="px-4 py-7 lg:p-10 max-w-xl bg-base-200 rounded-xl lato text-center"
           >
               <div class="max-w-md space-y-6">
                 <img class="w-16 md:w-24 mx-auto" src="./images/error.webp" alt="error" />
                 <h1 class="inter text-xl md:text-2xl lg:text-4xl font-bold">
                   No Information Available
                 </h1>
+                <h3 class="inter lg:text-base">"We are Sorry! The Selected Pet is Not Available."
+                </h3>
                 <p class="lato">
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a.
+                  Unfortunately, The pet you are interested in is currently not available for adoption. Our pet zone adoption service is constantly updating and new pets are added frequently. Thank you.
                 </p>
               </div>
           </div>
+          </div>
+          <!-- pet-card-right-side -->
+          <div class="w-full md:1/4 lg:w-2/6 gap-3 border-2 rounded-lg md:rounded-2xl">
+            <!-- w-full md:1/4 lg:w-2/6 gap-3 ml-auto -->
+            <div id="pet-image-card"
+              class="grid grid-cols-2 gap-3 lg:gap-[6px] rounded-lg md:rounded-2xl p-3"
+              >
+            </div>
+          </div>
         </section>
+      
         <!-- modal for details -->
         <div>
           <!-- Open the modal using ID.showModal() method -->
@@ -204,19 +207,19 @@
 
     <footer class="footer bg-black text-white p-10 mt-24">
       <nav>
-        <h6 class="lato text-lg md:text-2xl font-extrabold flex gap-2 mb-3">
-          <img src="./images/logo.webp" alt="pet-logo" />
+        <h6 class="lato items-center text-2xl font-extrabold flex gap-2 mb-3">
+          <img class="w-6" src="./images/logo.webp" alt="pet-logo" />
           Pet Zone
         </h6>
         <a class="lato link link-hover"
           >Location: av. Washington 165, NY CA 54003
         </a>
         <a class="link link-hover lato">Phone: +31 85 964 47 25 </a>
-        <a class="link link-hover lato">Email: info@yourdomain.com </a>
+        <a class="link link-hover lato">Email: petzone@gmail.com </a>
         <a class="link link-hover lato">Openings hours: 9.00 AM - 5.00 PM</a>
       </nav>
       <nav>
-        <h6 class="inter text-lg lato">User Links</h6>
+        <h6 class="inter text-lg">User Links</h6>
         <a class="link link-hover lato">Home</a>
         <a class="link link-hover lato">About us</a>
         <a class="link link-hover lato">Animals</a>
