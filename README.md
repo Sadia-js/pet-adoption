@@ -20,10 +20,6 @@
 - Adopt button will verify your confirmation process 
 
 
-## Deployment
+## Live link of Project
 
-To deploy this project run
-
-```bash
 https://pet-adoption-sn.surge.sh/
-```
