@@ -10,14 +10,14 @@
 - Template Literals
 - Destructuring 
 - forEach
-- Promises
+- Promises (Asynchronous)
 
 #### 2) 5 key features are used for this project
 - All categories maintained by given API
-- Asynchronous handling
+- Like button stands for how many pets you selected.
 - Dynamic UI 
-- Sorting Functionality for Sort by Price button
-- Error Handling
+- Sort by Price button used to show price from descending to ascending.
+- Adopt button will confirm your process 
 
 
 ## Deployment
