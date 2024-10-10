@@ -10,7 +10,7 @@
 - Template Literals
 - Destructuring 
 - forEach
-- Promises (Asynchronous)
+- let and const
 
 #### 2) 5 key features are used for this project
 - All categories maintained by given API
