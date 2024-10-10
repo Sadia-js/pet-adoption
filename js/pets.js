@@ -51,8 +51,16 @@ const loadSpinner = (name) => {
 // while triggered sort
 let currentPrice = []; 
 const sortingPrice = () => {
-    currentPrice.sort((a, b) => (b.price - a.price))
-    displayAllPets(currentPrice);
+    const dealsSection =  document.getElementById('deals-section');
+    dealsSection.classList.add('hidden');
+    document.getElementById('load-spinner').classList.remove('hidden');
+    document.querySelector('#deals-section').classList.add('hidden');
+    setTimeout(()=>{
+        // stop spinner after 2 sec
+        document.getElementById('load-spinner').classList.add('hidden');
+        currentPrice.sort((a, b) => (b.price - a.price))
+        displayAllPets(currentPrice);
+    }, 2000);
 } 
 
 //show category on clicking name based buttons
